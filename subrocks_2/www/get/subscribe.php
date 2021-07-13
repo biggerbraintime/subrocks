@@ -3,7 +3,6 @@
 <?php require($_SERVER['DOCUMENT_ROOT'] . "/static/important/initialized_utils.php"); ?>
 <?php
 $name = $_GET['n'];
-$author = $_SESSION['siteusername'];
 if(isset($_SESSION['siteusername'])) { 
     $_user_insert_utils->send_message($_GET['user'], "New subscriber", 'I subscribed to your channel!', $_SESSION['siteusername']);
 }
@@ -28,6 +27,5 @@ $stmt->bind_param("ss", $_SESSION['siteusername'], $name);
 
 $stmt->execute();
 $stmt->close();
-$author = htmlspecialchars($_SESSION['siteusername']);
 header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>
