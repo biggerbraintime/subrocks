@@ -3,13 +3,13 @@
 <?php
 $_video = $_video_fetch_utils->fetch_video_rid($_GET['id']);
 
-if($_SERVER['REQUEST_METHOD'] == 'POST') {
+if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['title']) && isset($_POST['comment']) && isset($_POST['tags']) && isset($_POST['category'])) {
     if(!isset($_SESSION['siteusername'])) { header("Location: /login"); } 
     if($_video['author'] != $_SESSION['siteusername']) { header("Location: /video_manager"); } 
-    $title = @$_POST['title'];
-    $description = @$_POST['comment'];
-    $tags = @$_POST['tags'];
-    $category = @$_POST['category'];
+    $title = $_POST['title'];
+    $description = $_POST['comment'];
+    $tags = $_POST['tags'];
+    $category = $_POST['category'];
 
     echo $title;
     echo $description;
