@@ -84,9 +84,7 @@
         
                 skipcomment:
 
-                echo "<script>
-                    window.location = 'category?c=" . $_category['title'] . "';
-                </script>";
+                die(header("Location: category?c=".$_category['title']));
             }
         ?>
         <div class="www-core-container">

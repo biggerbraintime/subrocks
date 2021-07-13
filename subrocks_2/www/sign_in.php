@@ -25,9 +25,7 @@
                 if(!password_verify($password, $hash)){ $error = "Incorrect username or password!"; goto skip; }
                 $_SESSION['siteusername'] = $username;
 
-                echo "<script>
-                window.location = '/';
-                </script>";
+                die(header("Location: /"));
             }
             skip:
         ?>

@@ -54,9 +54,7 @@
                         
                                 if($_user_insert_utils->register($username, $email, $passwordhash)) {
                                     $_SESSION['siteusername'] = htmlspecialchars($username);
-                                    echo "<script>
-                                        window.location = '/';
-                                    </script>";
+                                    die(header("Location: /"));
                                 } else {
                                     $error = array("There was an unknown error making your account.");
                                 }

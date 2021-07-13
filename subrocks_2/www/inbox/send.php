@@ -3,17 +3,14 @@
 <?php $mail = $_user_fetch_utils->fetch_mail($_GET['id']);?>
 <?php
     if(!isset($_SESSION['siteusername'])) {
-        header("Location: /sign_in");
+        die(header("Location: /sign_in"));
     }
 ?>
 <?php
     if($_SERVER['REQUEST_METHOD'] == 'POST' && @$_POST['send']) {
         $_user_insert_utils->send_message($_POST['to'], $_POST['subject'], $_POST['message'], $_SESSION['siteusername']);
         
-
-        echo "<script>
-            window.location = '/inbox/';
-        </script>";
+        die(header("Location: /inbox/"));
     }
 ?>
 <!DOCTYPE html>

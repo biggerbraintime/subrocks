@@ -63,7 +63,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
             $fileerror = 'unsupported file type. must be jpg, png, or jpeg';
             $uploadOk = false;
-            goto skip;
         }
 
         if (file_exists($target_file)) {
@@ -82,15 +81,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $fileerror = 'fatal error';
             }
         }
+    }
+} 
 
-        skip:
-        } else {
-            //idk
-        }
-    } 
-
-    
-    echo "<script>
-    window.location = '/edit_video?id=" . $_video['rid'] . "';
-    </script>";
+die(header("Location: /edit_video?id=".$_video['rid']));
 ?>

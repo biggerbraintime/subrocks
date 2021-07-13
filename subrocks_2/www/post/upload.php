@@ -2,11 +2,8 @@
 <?php require($_SERVER['DOCUMENT_ROOT'] . "/static/important/initialized_utils.php"); ?>
 <?php
 
-if(!isset($_SESSION['siteusername'])) {
-    echo "<script>
-    window.location = '/login';
-  </script>";
-}
+if(!isset($_SESSION['siteusername']))
+    die(header("Location: /login"));
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
     ini_set('display_errors', 1);

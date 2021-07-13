@@ -1,9 +1,6 @@
 <?php require($_SERVER['DOCUMENT_ROOT'] . "/static/important/config.inc.php"); ?>
 <?php require($_SERVER['DOCUMENT_ROOT'] . "/static/important/initialized_utils.php"); ?>
 <?php
-    ob_start();
-?>
-<?php
     if($_SERVER['REQUEST_METHOD'] == 'POST' && @$_POST['bioset']) {
         $_user_update_utils->update_user_bio($_SESSION['siteusername'], $_POST['bio']);
     } else if($_SERVER['REQUEST_METHOD'] == 'POST' && @$_POST['channelset']) {
@@ -199,8 +196,5 @@
     skip:
 
     // header('Location: ' . $_SERVER['HTTP_REFERER']); !????!
-
-    echo "<script>
-    window.location = '/user/" . htmlspecialchars($_SESSION['siteusername']) . "';
-    </script>";
+    die(header("Location: /user/".htmlspecialchars($_SESSION['siteusername'])));
 ?>

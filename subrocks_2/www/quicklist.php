@@ -2,16 +2,13 @@
 <?php require($_SERVER['DOCUMENT_ROOT'] . "/static/important/initialized_utils.php"); ?>
 <?php
   if(!isset($_SESSION['siteusername']))
-    header("Location: /sign_in");
+    die(header("Location: /sign_in"));
 ?>
 <?php
 if($_SERVER['REQUEST_METHOD'] == 'POST' && @$_POST['send']) {
     $_($_POST['to'], $_POST['subject'], $_POST['message'], $_SESSION['siteusername'], $conn);
     
-
-    echo "<script>
-        window.location = 'https://fulptube.rocks/inbox/';
-    </script>";
+    die(header("Location: /inbox/"));
 }
 ?>
 <!DOCTYPE html>
