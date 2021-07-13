@@ -1,9 +1,6 @@
 <?php require($_SERVER['DOCUMENT_ROOT'] . "/static/important/config.inc.php"); ?>
 <?php require($_SERVER['DOCUMENT_ROOT'] . "/static/important/initialized_utils.php"); ?>
 <?php
-  $_base_utils->initialize_page_compass("post/upload");
-?>
-<?php
 
 if(!isset($_SESSION['siteusername'])) {
     echo "<script>

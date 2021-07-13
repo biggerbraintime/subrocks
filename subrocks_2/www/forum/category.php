@@ -2,13 +2,11 @@
 <?php require($_SERVER['DOCUMENT_ROOT'] . "/static/important/initialized_utils.php"); ?>
 <?php
   $_category = $_user_fetch_utils->fetch_category_name($_GET['c']);
-
-  $_base_utils->initialize_page_compass($_category['title']);
 ?>
 <!DOCTYPE html>
 <html>
     <head>
-        <title>SubRocks - <?php echo $_base_utils->return_current_page(); ?></title>
+        <title>SubRocks - <?php echo $_category['title']; ?></title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/static/css/new/www-core.css">
         <style>

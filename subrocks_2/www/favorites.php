@@ -3,13 +3,11 @@
 <?php
   if(!isset($_SESSION['siteusername']))
   header("Location: /sign_in");
-
-  $_base_utils->initialize_page_compass("Video Manager");
 ?>
 <!DOCTYPE html>
 <html>
     <head>
-        <title>SubRocks - <?php echo $_base_utils->return_current_page(); ?></title>
+        <title>SubRocks - Video Manager</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/static/css/new/www-core.css">
         <style>

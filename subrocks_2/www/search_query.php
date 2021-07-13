@@ -7,13 +7,11 @@
   $stmt56->execute();
   $result854 = $stmt56->get_result();
   $result56 = $result854->num_rows;
-
-  $_base_utils->initialize_page_compass(htmlspecialchars($_GET['q']));
 ?>
 <!DOCTYPE html>
 <html>
     <head>
-        <title>SubRocks - <?php echo $_base_utils->return_current_page(); ?></title>
+        <title>SubRocks - <?php echo htmlspecialchars($_GET['q']); ?></title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/static/css/new/www-core.css">
     </head>

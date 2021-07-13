@@ -1,14 +1,12 @@
 <?php require($_SERVER['DOCUMENT_ROOT'] . "/static/important/config.inc.php"); ?>
 <?php require($_SERVER['DOCUMENT_ROOT'] . "/static/important/initialized_utils.php"); ?>
 <?php
-  $_base_utils->initialize_page_compass("Adding a video response");
-
   $_video = $_video_fetch_utils->fetch_video_rid($_GET['v']);
 ?>
 <!DOCTYPE html>
 <html>
     <head>
-        <title>SubRocks - <?php echo $_base_utils->return_current_page(); ?></title>
+        <title>SubRocks - Adding a video response</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/static/css/new/www-core.css">
     </head>

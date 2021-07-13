@@ -2,13 +2,11 @@
 <?php require($_SERVER['DOCUMENT_ROOT'] . "/static/important/initialized_utils.php"); ?>
 <?php
   $thread = $_user_fetch_utils->fetch_thread_name($_GET['v']);
-
-  $_base_utils->initialize_page_compass($thread['title']);
 ?>
 <!DOCTYPE html>
 <html>
     <head>
-        <title>SubRocks - <?php echo $_base_utils->return_current_page(); ?></title>
+        <title>SubRocks - <?php echo $thread['title'] ?></title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/static/css/new/www-core.css">
         <script src='https://www.google.com/recaptcha/api.js' async defer></script>

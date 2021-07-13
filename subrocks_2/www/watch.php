@@ -10,7 +10,6 @@
     // Cannot use a scalar value as an array ....? This worked in PHP 8 but doesn't in PHP 7.4 for some reason..... Oh well!
     //error_reporting(E_ERROR | E_PARSE);
     $_video = $_video_fetch_utils->fetch_video_rid($_GET['v']);
-    $_base_utils->initialize_page_compass(htmlspecialchars($_video['title']));
 
     $_video['likes'] = $_video_fetch_utils->get_video_likes($_GET['v']);
     $_video['dislikes'] = $_video_fetch_utils->get_video_dislikes($_GET['v']);
@@ -91,7 +90,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>SubRocks - <?php echo $_base_utils->return_current_page(); ?></title>
+        <title>SubRocks - <?php echo htmlspecialchars($_video['title']); ?></title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/static/css/new/www-core.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

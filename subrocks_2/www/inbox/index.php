@@ -1,12 +1,9 @@
 <?php require($_SERVER['DOCUMENT_ROOT'] . "/static/important/config.inc.php"); ?>
 <?php require($_SERVER['DOCUMENT_ROOT'] . "/static/important/initialized_utils.php"); ?>
-<?php
-    $_base_utils->initialize_page_compass("Inbox");
-?>
 <!DOCTYPE html>
 <html>
     <head>
-        <title>SubRocks - <?php echo $_base_utils->return_current_page(); ?></title>
+        <title>SubRocks - Inbox</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/static/css/new/www-core.css">
         <style>

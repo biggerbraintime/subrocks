@@ -12,7 +12,6 @@
     $_user['favorites'] = $_user_fetch_utils->fetch_user_favorites($_user['username']);
     $_user['subscriptions'] = $_user_fetch_utils->fetch_subscriptions($_user['username']);
 
-    $_base_utils->initialize_page_compass(htmlspecialchars($_user['username']));
     $_video_insert_utils->check_view_channel($_user['username'], @$_SESSION['siteusername']);
 
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -33,7 +32,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>SubRocks - <?php echo $_base_utils->return_current_page(); ?></title>
+        <title>SubRocks - <?php echo htmlspecialchars($_user['username']); ?></title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/static/css/new/www-core.css">
         <script src='https://www.google.com/recaptcha/api.js' async defer></script>
